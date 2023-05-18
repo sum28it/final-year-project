@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Disease Predictor</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Website Title -->
+
+  <div class="container">
+    <h2 class='container-heading'><span class="heading_font">Heart Disease Predictor</span></h2>
+
+    <div class='description'>
+      <p>A Machine Learning Web Application that predicits chances of having heart Disease or not, Built with Flask and Deployed in Kubernetes.</p><br>
+    </div>
+  </div>
+
+  <!-- Text Area -->
+  <div class="ml-container">
+    <form action="{{ url_for('predict')}}" method="POST"> 
+
+      
+        <label for="bmi">BMI</label>
+        <input type="text" id="bmi" name="bmi" placeholder="Your BMI.."><br>
+
+
+        <label for="smoking">Smoking</label>
+        <select id="smoking" name="smoking">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+        
+        <label for="alcoholDrinking">Alcohol Drinking</label>
+        <select id="alcoholDrinking" name="alcoholDrinking">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+
+        <label for="stroke">Stroke</label>
+        <select id="stroke" name="stroke">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+        <label for="physicalHealth">Physical Health</label>
+        <input type="text" id="physicalHealth" name="physicalHealth" placeholder="Number in range[1-30]"><br>
+
+        <label for="mentalHealth">Mental Health</label>
+        <input type="text" id="mentalHealth" name="mentalHealth" placeholder="Number in range[1-30]"><br>
+
+        <label for="diffWalk">Diffculty Walking</label>
+        <select id="diffwalk" name="diffwalk">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+        <label for="sex">Sex</label>
+        <select id="sex" name="sex">
+          <option selected>----select option----</option>
+          <option value="1">Male</option>
+          <option value="0">Female</option>
+        </select><br>
+
+        <label for="ageCat">Age Category</label>
+        <select id="ageCat" name="ageCat">
+          <option selected>----select option----</option>
+          <option value="0">20-25</option>
+          <option value="1">25-30</option>
+          <option value="2">30-35</option>
+          <option value="3">35-40</option>
+          <option value="4">40-45</option>
+          <option value="5">45-50</option>
+          <option value="6">50-55</option>
+          <option value="7">55-60</option>
+          <option value="8">60-65</option>
+          <option value="9">65-70</option>
+          <option value="10">70-75</option>
+          <option value="11">75-80</option>
+          <option value="12">Above 80</option>
+        </select><br>
+
+
+        <label for="race">Race</label>
+        <select id="race" name="race">
+          <option selected>----select option----</option>
+          <option value="5">White</option>
+          <option value="4">Hispanic</option>
+          <option value="3">Black</option>
+          <option value="2">Other</option>
+          <option value="1">Asian</option>
+          <option value="0">Alaskan</option>
+        </select><br>
+
+       <label for="diabetic">Diabetic</label>
+        <select id="diabetic" name="diabetic">
+          <option selected>----select option----</option>
+          <option value="2">Yes</option>
+          <option value="1">No, borderline</option>
+          <option value="0">No</option>
+        </select><br>
+
+        <label for="physicalActiv">Physical Activity</label>
+        <select id="physicalActiv" name="physicalActiv">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+        
+        <label for="genHealth">General Health</label>
+        <select id="genHealth" name="genHealth">
+          <option selected>----select option----</option>
+          <option value="0">Poor</option>
+          <option value="1">Fair</option>
+          <option value="2">Good</option>
+          <option value="4">Very Good</option>
+        </select><br>
+
+
+        <label for="sleeptime">Sleep Time</label>
+        <input type="text" id="sleeptime" name="sleeptime" placeholder="Sleep Time..."><br>
+        
+
+        <label for="asthma">Asthma</label> 
+        <select id="asthma" name="asthma">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+ 
+        <label for="kidneyDisease">Kidney Disease</label> 
+        <select id="kidneyDisease" name="kidneyDisease">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br> 
+
+        <label for="skinCancer">Skin Cancer</label> 
+        <select id="skinCancer" name="skinCancer">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br> 
+        
+
+      <input type="submit" class="my-cta-button" value="Predict">
+    </form>
+  </div>
+
+</body>
+
+</html>
